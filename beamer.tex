@@ -1,0 +1,132 @@
+\documentclass[notheorems,notes]{beamer}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{helper} % remove all \newtheorem commands from this package as beamer has predefined them
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{framed}
+
+\usepackage{algorithm}
+% \usepackage{algorithmic}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+\setbeamertemplate{theorems}[numbered]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}{Observation}
+
+\setlength{\leftmargini}{0pt}
+
+\usetikzlibrary{automata, arrows.meta, positioning}
+\usetikzlibrary{shapes.multipart,decorations.pathreplacing,patterns}
+\usepackage{letltxmacro}
+
+\LetLtxMacro{\originaleqref}{\eqref}
+\renewcommand{\eqref}{Eq.~\originaleqref}
+
+% \newcommand{\inner}[1]{\left\langle#1\right\rangle}
+% \newcommand{\cmt}[1]{{\color{red}{#1}}}
+% \newcommand{\todo}[1]{{\color{blue}{ TODO: #1}}}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+%Information to be included in the title page:
+\title{Title}
+\author{Author}
+\institute{Institute}
+\date{}
+\makeatletter 
+\def\beamer@framenotesbegin{
+    \usebeamercolor[fg]{normal text}
+    \gdef\beamer@noteitems{}% 
+    \gdef\beamer@notes{}% 
+}
+\defbeamertemplate*{note page}{custom}
+{%
+  {%
+    \scriptsize
+    \usebeamerfont{note title}\usebeamercolor[fg]{note title}%
+    \ifbeamercolorempty[bg]{note title}{}{%
+      \insertvrule{.25\paperheight}{note title.bg}%
+      \vskip-.25\paperheight%
+      \nointerlineskip%
+    }%
+    % \vbox{
+      %\hfill\insertslideintonotes{0.25}\hskip-\Gm@rmargin\hskip0pt%
+      %\vskip-0.25\paperheight%
+      %\nointerlineskip
+      % \begin{pgfpicture}{0cm}{0cm}{0cm}{0cm}
+      %   \begin{pgflowlevelscope}{\pgftransformrotate{90}}
+      %     {\pgftransformshift{\pgfpoint{-2cm}{0.2cm}}%
+      %       \pgftext[base,left]{\usebeamerfont{note date}\usebeamercolor[fg]{note date}\the\year-\ifnum\month<10\relax0\fi\the\month-\ifnum\day<10\relax0\fi\the\day}}
+      %   \end{pgflowlevelscope}
+      % \end{pgfpicture}
+    % }
+    \nointerlineskip
+    \vbox to .15\paperheight{\vskip0.5em
+      %\hbox{\insertshorttitle[width=0.75\textwidth]}%
+      \setbox\beamer@tempbox=\hbox{\insertsection}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{0.71\textwidth}\def\breakhere{}\insertsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertsubsection}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip17.4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{0.71\textwidth}\def\breakhere{}\insertsubsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertshortframetitle}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip30.8pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\insertshortframetitle[width=0.67\textwidth]}\fi%
+      }%
+      \vfil}%
+  }%
+  \ifbeamercolorempty[bg]{note page}{}{%
+    \nointerlineskip%
+    \insertvrule{.85\paperheight}{note page.bg}%
+    \vskip-.85\paperheight%
+  }%
+  \vskip.25em
+  \nointerlineskip
+  \insertnote
+}
+  
+\setbeamertemplate{note page}[custom]
+% \setbeameroption{show notes on second screen=right}
+% \setbeameroption{show notes}
+% \setbeameroption{hide notes}
+% \addtobeamertemplate{note page}{}{\thispdfpagelabel{notes:\insertframenumber}}
+\setbeamertemplate{navigation symbols}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%\
+    \insertframenumber/\inserttotalframenumber
+}
+\setbeamercolor{footline}{fg=black}
+% \setbeamerfont{footline}{series=\bfseries}
+
+\begin{document}
+\titlepage
+\begin{frame}
+    \nocite{*}
+    \frametitle{References}
+    %\bibliographystyle{IEEEtran}
+    \bibliographystyle{unsrtnat}
+    \bibliography{references}
+    \end{frame}
+\end{document}

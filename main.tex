@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[a4paper,total={6.5in,10.5in}]{geometry}
+% \usepackage{arxiv} % do not use with geometry
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{lmodern}
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+%\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{MnSymbol} % incompatible with the amssymb and amsfonts packages. It automatically loads the amsmath and textcomp packages.
+\usepackage{lettrine}
+\usepackage{color}
+\usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage{algpseudocode}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{ifthen}
+% \usepackage{cite}
+\usepackage{graphicx}
+% \usepackage{subfigure}
+\usepackage{dsfont}
+\usepackage{framed}
+% \usepackage{overpic} %LaTeX commands can be placed on the graphic at defined positions
+\usepackage[svgnames]{xcolor}
+% \usepackage{apxproof} % defer proofs to the appendix
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[]{hyperref}       % hyperlinks
+\usepackage{cleveref} % load after hyperref
+
+\usepackage{helper}
+
+\newboolean{DisplayComments}
+\setboolean{DisplayComments}{true}
+% \setboolean{DisplayComments}{false}
+\DeclareRobustCommand{\aj}[1]{\ifthenelse{\boolean{DisplayComments}}{{\color{red} (AJ: #1)}}{}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=red,
+	citecolor=DarkBlue,
+	linkbordercolor={0 0 1}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{assumption}{Assumption}
+
+\title{Title}
+\author{
+   Ativ Joshi\\
+%    School of Technology and Computer Science \\
+%   Tata Institute of Fundamental Research \\
+%   Mumbai 400005, India\\
+%    \texttt{ativ@cmi.ac.in}
+}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Section}
+
+This is a section.
+\aj{This is a comment. Turn \texttt{DisplayComments} to \texttt{false} to turn the comments off.}
+
+\nocite{*}
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

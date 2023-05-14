@@ -1,0 +1,354 @@
+% Author: Ativ Joshi
+% always import last after importing dependencies first
+\ProvidesPackage{helper}
+\RequirePackage{amsmath}
+% \usepackage{xifthen}
+% \usepackage[utf8]{inputenc} % allow utf-8 input
+% \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+% \usepackage{url}            % simple URL typesetting
+% \usepackage{booktabs}       % professional-quality tables
+\RequirePackage{amsfonts}       % blackboard math symbols
+% \usepackage{nicefrac}       % compact symbols for 1/2, etc.
+% \usepackage{microtype}      % microtypography
+% \usepackage{lipsum}		% Can be removed after putting your text content
+% \usepackage{graphicx}
+% \usepackage{natbib}
+% \usepackage{doi}
+% \usepackage{mathrsfs}
+% \usepackage{amsthm}
+% \usepackage{xcolor}
+% \usepackage{pdfpages}
+% \usepackage{comment}
+% \usepackage{mathtools}
+\RequirePackage{algorithm}
+% \usepackage{algorithmic}
+\RequirePackage{algpseudocode}
+\RequirePackage{bm}
+\RequirePackage{bbm}
+
+% number equations only if they are referred
+% \mathtoolsset{showonlyrefs}
+
+% % setup environments for theorem 
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{observation}{Observation}
+% \usepackage[ pdfborderstyle={/S/U/W 0}]{hyperref}       % hyperlinks
+
+% \hypersetup{
+%     colorlinks   = true, %Colours links instead of ugly boxes
+%     urlcolor     = blue, %Colour for external hyperlinks
+%     linkcolor    = blue, %Colour of internal links
+%     citecolor   = blue %Colour of citations
+% }
+
+% \newcommand{\cmt}[1]{{\color{red}{ #1}}}
+% \newcommand{\cmtb}[1]{{\color{blue}{ #1}}}
+
+\algnewcommand{\algorithmicforeach}{\textbf{for each}}
+\algdef{SE}[FOR]{ForEach}{EndForEach}[1]
+  {\algorithmicforeach\ #1\ \algorithmicdo}% \ForEach{#1}
+  {\algorithmicend\ \algorithmicforeach}% \EndForEach
+
+
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\newcommand{\opnorm}[2]{\left\|#1\right\|_{#2}}
+\newcommand{\beq}[2][]{\begin{equation}\label{#1}#2\end{equation}}
+\newcommand{\inner}[1]{\left\langle#1\right\rangle}
+\newcommand{\del}{\partial}
+\newcommand{\trace}[1]{\operatorname{tr}\left(#1\right)}
+\newcommand{\expect}{\mathbb{E}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\var}{\texttt{Var}}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\bm{\mathrm{#1}}}
+\newcommand{\algcomment}[1]{\footnotesize \hfill \texttt{// #1}}
+\newcommand{\indicator}[1]{\mathbbm{1}\left\{#1\right\}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\independent}{\perp\!\!\!\!\perp}
+\newcommand{\perm}{\operatorname{perm}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\ic}[1]{\{#1\}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+% \newcommand{\bitem}{\begin{itemize}}
+% \newcommand{\eitem}{\end{itemize}}
+% \newcommand{\benum}{\begin{enumerate}}
+% \newcommand{\eenum}{\end{enumerate}}
+% \newcommand{\bdescr}{\begin{description}}
+% \newcommand{\edescr}{\end{description}}
+% \newcommand{\beq}[1]{\begin{equation}#1\end{equation}}
+
+\newcommand{\bfTheta}{\mathbf{\Theta}}
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}	% space of data
+\newcommand{\calE}{\mathcal{E}}	% space of encodings
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}	% space of gibberish
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}	% space of keys
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+\newcommand{\bbA}{{\mathbb A}}   
+\newcommand{\bbB}{{\mathbb B}}
+\newcommand{\bbC}{{\mathbb C}}
+\newcommand{\bbD}{{\mathbb D}}
+\newcommand{\bbE}{{\mathbb E}}
+\newcommand{\bbF}{{\mathbb F}}
+\newcommand{\bbH}{{\mathbb H}}
+\newcommand{\bbI}{{\mathbb I}}
+\newcommand{\bbK}{{\mathbb K}}
+\newcommand{\bbL}{{\mathbb L}}
+\newcommand{\bbN}{{\mathbb N}}
+\newcommand{\bbO}{{\mathbb O}}
+\newcommand{\bbQ}{{\mathbb Q}}
+\newcommand{\bbR}{{\mathbb R}}
+\newcommand{\bbP}{{\mathbb P}}
+\newcommand{\bbS}{{\mathbb S}}
+\newcommand{\bbT}{{\mathbb T}}
+\newcommand{\bbU}{{\mathbb U}}
+\newcommand{\bbX}{{\mathbb X}}
+\newcommand{\bbY}{{\mathbb Y}}
+\newcommand{\bbZ}{{\mathbb Z}}
+
+\newcommand{\bfpi}{\boldsymbol{\pi}}
+\newcommand{\bfomega}{\boldsymbol{\omega}}
+\newcommand{\bfa}{{\boldsymbol{a}}}
+\newcommand{\bfalpha}{{\boldsymbol{\alpha}}}
+\newcommand{\bfb}{{\boldsymbol{b}}}
+\newcommand{\bfbeta}{{\boldsymbol{\beta}}}
+\newcommand{\bfc}{{\boldsymbol{c}}}
+\newcommand{\bfgamma}{{\boldsymbol{\gamma}}}
+\newcommand{\bfd}{\boldsymbol{d}}
+\newcommand{\bfe}{\boldsymbol{e}}
+\newcommand{\bff}{\boldsymbol{f}}
+\newcommand{\bfg}{\boldsymbol{g}}
+\newcommand{\bfh}{\boldsymbol{h}}
+\newcommand{\bfi}{\boldsymbol{i}}
+\newcommand{\bfj}{\boldsymbol{j}}
+\newcommand{\bfk}{\boldsymbol{k}}
+\newcommand{\bfl}{\boldsymbol{l}}
+\newcommand{\bfm}{\boldsymbol{m}}
+\newcommand{\bfn}{\boldsymbol{n}}
+\newcommand{\bfo}{\boldsymbol{o}}
+\newcommand{\bfp}{\boldsymbol{p}}
+\newcommand{\bfq}{\boldsymbol{q}}
+\newcommand{\bfr}{\boldsymbol{r}}
+\newcommand{\bfs}{\boldsymbol{s}}
+\newcommand{\bft}{\boldsymbol{t}}
+\newcommand{\bfu}{\boldsymbol{u}}
+\newcommand{\bfv}{\boldsymbol{v}}
+\newcommand{\bfw}{\boldsymbol{w}}
+\newcommand{\bfx}{\boldsymbol{x}}
+\newcommand{\bfy}{\boldsymbol{y}}
+\newcommand{\bfz}{\boldsymbol{z}} 
+
+\newcommand{\olA}{{\overline{A}}}
+\newcommand{\olB}{{\overline{B}}}
+\newcommand{\olC}{{\overline{C}}}
+\newcommand{\olD}{{\overline{D}}}
+\newcommand{\olf}{{\overline{f}}}
+\newcommand{\olg}{{\overline{g}}}
+\newcommand{\olh}{{\overline{h}}}
+\newcommand{\olS}{{\overline{S}}}
+\newcommand{\ols}{{\overline{s}}} % Bernstein basis \ols=1-s
+\newcommand{\olT}{{\overline{T}}}
+\newcommand{\olt}{{\overline{t}}} % Bernstein basis \olt=1-t
+\newcommand{\olU}{{\overline{U}}}
+\newcommand{\olu}{{\overline{u}}} % in Bernstein basis \olu=1-u
+\newcommand{\olV}{{\overline{V}}}
+\newcommand{\olv}{{\overline{v}}} 
+\newcommand{\olw}{{\overline{w}}} 
+\newcommand{\olW}{{\overline{W}}}
+\newcommand{\olx}{{\overline{x}}}
+\newcommand{\olX}{{\overline{X}}}
+\newcommand{\oly}{{\overline{y}}}
+\newcommand{\olY}{{\overline{Y}}}
+\newcommand{\olz}{{\overline{z}}}
+\newcommand{\olZ}{{\overline{Z}}}
+
+\newcommand{\ahat}{\hat{a}}
+\newcommand{\bhat}{\hat{b}}
+\newcommand{\chat}{\hat{c}}
+\newcommand{\dhat}{\hat{d}}
+\newcommand{\ehat}{\hat{e}}
+\newcommand{\fhat}{\hat{f}}
+\newcommand{\ghat}{\hat{g}}
+\newcommand{\hhat}{\hat{h}}
+\newcommand{\ihat}{\hat{i}}
+\newcommand{\jhat}{\hat{j}}
+\newcommand{\khat}{\hat{k}}
+\newcommand{\lhat}{\hat{l}}
+\newcommand{\nhat}{\hat{n}}
+\newcommand{\mhat}{\hat{m}}
+\newcommand{\ohat}{\hat{o}}
+\newcommand{\phat}{\hat{p}}
+\newcommand{\qhat}{\hat{q}}
+\newcommand{\rhat}{\hat{r}}
+\newcommand{\shat}{\hat{s}}
+\newcommand{\that}{\hat{t}}
+\newcommand{\uhat}{\hat{u}}
+\newcommand{\vhat}{\hat{v}}
+\newcommand{\what}{\hat{w}}
+\newcommand{\xhat}{\hat{x}}
+\newcommand{\yhat}{\hat{y}}
+\newcommand{\zhat}{\hat{z}}
+
+\newcommand{\Ahat}{\hat{A}}
+\newcommand{\Bhat}{\hat{B}}
+\newcommand{\Chat}{\hat{C}}
+\newcommand{\Dhat}{\hat{D}}
+\newcommand{\Ehat}{\hat{E}}
+\newcommand{\Fhat}{\hat{F}}
+\newcommand{\Ghat}{\hat{G}}
+\newcommand{\Hhat}{\hat{H}}
+\newcommand{\Ihat}{\hat{I}}
+\newcommand{\Jhat}{\hat{J}}
+\newcommand{\Khat}{\hat{K}}
+\newcommand{\Lhat}{\hat{L}}
+\newcommand{\Nhat}{\hat{N}}
+\newcommand{\Mhat}{\hat{M}}
+\newcommand{\Ohat}{\hat{O}}
+\newcommand{\Phat}{\hat{P}}
+\newcommand{\Qhat}{\hat{Q}}
+\newcommand{\Rhat}{\hat{R}}
+\newcommand{\Shat}{\hat{S}}
+\newcommand{\That}{\hat{T}}
+\newcommand{\Uhat}{\hat{U}}
+\newcommand{\Vhat}{\hat{V}}
+\newcommand{\What}{\hat{W}}
+\newcommand{\Xhat}{\hat{X}}
+\newcommand{\Yhat}{\hat{Y}}
+\newcommand{\Zhat}{\hat{Z}}
+
+\newcommand{\atld}{\tilde{a}}
+\newcommand{\btld}{\tilde{b}}
+\newcommand{\ctld}{\tilde{c}}
+\newcommand{\dtld}{\tilde{d}}
+\newcommand{\etld}{\tilde{e}}
+\newcommand{\ftld}{\tilde{f}}
+\newcommand{\gtld}{\tilde{g}}
+\newcommand{\htld}{\tilde{h}}
+\newcommand{\itld}{\tilde{i}}
+\newcommand{\jtld}{\tilde{j}}
+\newcommand{\ktld}{\tilde{k}}
+\newcommand{\ntld}{\tilde{n}}
+\newcommand{\mtld}{\tilde{m}}
+\newcommand{\otld}{\tilde{o}}
+\newcommand{\ptld}{\tilde{p}}
+\newcommand{\qtld}{\tilde{q}}
+\newcommand{\rtld}{\tilde{r}}
+\newcommand{\stld}{\tilde{s}}
+\newcommand{\ttld}{\tilde{t}}
+\newcommand{\utld}{\tilde{u}}
+\newcommand{\vtld}{\tilde{v}}
+\newcommand{\wtld}{\tilde{w}}
+\newcommand{\xtld}{\tilde{x}}
+\newcommand{\ytld}{\tilde{y}}
+\newcommand{\ztld}{\tilde{z}} 
+
+\newcommand{\pitld}{\tilde{\pi}}
+\newcommand{\mutld}{\tilde{\mu}}
+\newcommand{\pihat}{\hat{\pi}}
+
+
+% shorthand for labeled theorem with name
+% \newcommand{\bthm}[3][]{\begin{theorem}\textbf{(#2)} \label{#1} #3 \end{theorem}}
+
+% \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+% \newcommand{\smat}[1]{\left[\begin{smallmatrix}#1\end{smallmatrix}\right]}
+
+% example usage of ifthenelse to number equations only if they are labeled
+% \newcommand{\beq}[2][]{%
+%     \ifthenelse{\isempty{#1}}{\begin{equation*}#2\end{equation*}}{\begin{equation}\label{#1}#2\end{equation}}%
+% }
+
+
+
+
+
+% This is for beamer
+% 
+% \def\itemsymbol{$\blacktriangleright$}
+% \let\svpar\par
+% \let\svitemize\itemize
+% \let\svenditemize\enditemize
+% \let\svitem\item
+% \let\svcenter\center
+% \let\svendcenter\endcenter
+% \let\svcolumn\column
+% \let\svendcolumn\endcolumn
+% \def\newitem{\renewcommand\item[1][\itemsymbol]{\vfill\svitem[##1]}}%
+% \def\newpar{\def\par{\svpar\vfill}}%
+% 
+% \newlength\columnskip
+% \columnskip 0pt
+% \newcommand\stretchon{%
+%   \newpar%
+%   \renewcommand\item[1][\itemsymbol]{\svitem[##1]\newitem}%
+%   \renewenvironment{itemize}%
+%     {\svitemize}{\svenditemize\newpar\par}%
+%   \renewenvironment{center}%
+%     {\svcenter\newpar}{\svendcenter\newpar}%
+%   \renewenvironment{column}[2]%
+%     {\svcolumn{##1}\setlength{\parskip}{\columnskip}##2}%
+%     {\svendcolumn\vspace{\columnskip}}%
+% }
+% 
+% \newcommand\stretchoff{%
+%   \let\par\svpar%
+%   \let\item\svitem%
+%   \let\itemize\svitemize%
+%   \let\enditemize\svenditemize%
+%   \let\center\svcenter%
+%   \let\endcenter\svendcenter%
+%   \let\column\svcolumn%
+%   \let\endcolumn\svendcolumn%
+% }
