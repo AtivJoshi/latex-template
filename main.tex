@@ -40,7 +40,7 @@
 \newboolean{DisplayComments}
 \setboolean{DisplayComments}{true}
 % \setboolean{DisplayComments}{false}
-\DeclareRobustCommand{\aj}[1]{\ifthenelse{\boolean{DisplayComments}}{{\color{red} (AJ: #1)}}{}}
+\DeclareRobustCommand{\aj}[1]{\ifthenelse{\boolean{DisplayComments}}{{\color{violet} (AJ: #1)}}{}}
 
 \hypersetup{
 	colorlinks=true,
@@ -71,7 +71,10 @@
 \section{Section}
 
 This is a section.
+
 \aj{This is a comment. Turn \texttt{DisplayComments} to \texttt{false} to turn the comments off.}
+
+Use \url{https://www.mathcha.io/} to generate tikz images.
 
 \nocite{*}
 \bibliographystyle{unsrtnat}
