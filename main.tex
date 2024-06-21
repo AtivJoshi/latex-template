@@ -1,3 +1,4 @@
+\PassOptionsToPackage{svgnames}{xcolor} % use if there is a clash while loading xcolor
 \documentclass{article}
 \usepackage[a4paper,total={6.5in,10.5in}]{geometry}
 % \usepackage{arxiv} % do not use with geometry
@@ -29,7 +30,6 @@
 \usepackage{dsfont}
 \usepackage{framed}
 \usepackage{tikz}
-\PassOptionsToPackage{svgnames}{xcolor} % use if there is a clash while loading xcolor
 % \usepackage{overpic} %LaTeX commands can be placed on the graphic at defined positions
 % \usepackage[svgnames]{xcolor}
 % \usepackage{apxproof} % defer proofs to the appendix
@@ -82,12 +82,13 @@
 
 Use \url{https://www.mathcha.io/} to generate tikz images.\\
 
-Sample algorithm using \texttt{algpseudocode} which uses \texttt{algorithmicx}. 
+Sample algorithm using \texttt{algpseudocode} which uses \texttt{algorithmicx} \cite[Section X]{cormen2022introduction}. 
 \begin{algorithm}
     \caption{Euclid’s algorithm}
     \label{euclid}
     \begin{algorithmic}[1] % The number tells where the line numbering should start. Use 0 to remove line numbers
-        \Procedure{Euclid}{$a,b$} \Comment{The g.c.d. of a and b}
+        % \Procedure{Euclid}{$a,b$} \Comment{The g.c.d. of a and b}
+            \State \textbf{Input:} \(a,b \in \bbN\)
             \State $r\gets a \bmod b$
             \While{$r\not=0$} \Comment{We have the answer if r is 0}
                 \State $a \gets b$
@@ -98,7 +99,7 @@ Sample algorithm using \texttt{algpseudocode} which uses \texttt{algorithmicx}.
 				\State do some shit. \Comment{example of custom ForEach command}
 			\EndForEach
             \State \textbf{return} $b$\Comment{The gcd is b}
-        \EndProcedure
+        % \EndProcedure
     \end{algorithmic}
 \end{algorithm}
 
